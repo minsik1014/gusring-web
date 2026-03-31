@@ -23,7 +23,7 @@ import {
 
 const App: React.FC = () => {
   // ── 전역 상태 ──────────────────────────────────────────────
-  const [currentLang, setCurrentLang]           = useState<LangId>('ko');
+  const [currentLang, setCurrentLang]           = useState<LangId>('en');
   const [view, setView]                         = useState<ViewName>('landing');
   const [selectedForm, setSelectedForm]         = useState<FormItem | null>(null);
   const [searchTerm, setSearchTerm]             = useState('');
@@ -98,9 +98,7 @@ const App: React.FC = () => {
   const handleDownload = useCallback(async () => {
     if (isDownloading || !selectedForm) return;
 
-    // ko는 PNG 없으므로 en 폴백
-    const lang = currentLang === 'ko' ? 'en' : currentLang;
-    const imageUrl = selectedForm.images?.[lang] ?? selectedForm.images?.['en'];
+    const imageUrl = selectedForm.images?.[currentLang] ?? selectedForm.images?.['en'];
     if (!imageUrl) return;
 
     trackFormDownload({
