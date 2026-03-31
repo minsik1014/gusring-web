@@ -5,6 +5,7 @@ import { ZoomOut, Info, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { FormItem, I18nString, LangId } from '../types';
 import FormMockPreview from './FormMockPreview';
 import { hotspotsByCategory } from '../data/hotspots';
+import { UIStrings } from '../data/strings';
 
 interface Props {
   form: FormItem;
@@ -109,8 +110,8 @@ const FormViewer: React.FC<Props> = ({ form, t, lang }) => {
           </div>
           <span className="text-[11px] font-bold text-gusring-text-sub">
             {scale > 1.1
-              ? '두 번 탭하면 원래 크기로'
-              : '번호를 탭하면 작성 방법을 볼 수 있어요'}
+              ? t(UIStrings.zoomHintReset)
+              : t(UIStrings.zoomHint)}
           </span>
         </div>
         {scale > 1.1 && (
@@ -118,7 +119,7 @@ const FormViewer: React.FC<Props> = ({ form, t, lang }) => {
             onClick={resetZoom}
             className="btn-press flex items-center gap-1 px-2.5 py-1 bg-white rounded-xl text-[11px] font-bold text-amber-600 border border-amber-100"
           >
-            <ZoomOut size={12} /> 초기화
+            <ZoomOut size={12} /> {t(UIStrings.zoomReset)}
           </button>
         )}
       </div>
@@ -206,7 +207,7 @@ const FormViewer: React.FC<Props> = ({ form, t, lang }) => {
                   className="btn-press flex items-center gap-1.5 px-3 py-2 bg-gusring-bg rounded-2xl text-[12px] font-bold text-gusring-text-sub"
                   onClick={goPrev}
                 >
-                  <ChevronLeft size={14} /> 이전 항목
+                  <ChevronLeft size={14} /> {t(UIStrings.prevItem)}
                 </button>
                 <span className="text-[11px] font-bold text-gusring-text-hint">
                   {activeIdx! + 1} / {hotspots.length}
@@ -215,7 +216,7 @@ const FormViewer: React.FC<Props> = ({ form, t, lang }) => {
                   className="btn-press flex items-center gap-1.5 px-3 py-2 bg-gusring-yellow rounded-2xl text-[12px] font-bold text-amber-900"
                   onClick={goNext}
                 >
-                  다음 항목 <ChevronRight size={14} />
+                  {t(UIStrings.nextItem)} <ChevronRight size={14} />
                 </button>
               </div>
             )}

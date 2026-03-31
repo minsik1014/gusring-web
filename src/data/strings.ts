@@ -16,6 +16,12 @@ export const UIStrings: Record<string, I18nString> = {
   aiConsult:        { ko: '상담 AI 연결',                        en: 'Chat with AI',                       zh: '咨询 AI',           ja: 'AI相談',                       vi: 'Tư vấn AI'                        },
   formPreview:      { ko: '서류 미리보기',                       en: 'Form Preview',                       zh: '表格预览',          ja: '書類プレビュー',               vi: 'Xem trước mẫu đơn'               },
   formPreviewNote:  { ko: '예시 이미지입니다 · 실제 서류와 다를 수 있습니다', en: 'Sample preview · Actual form may differ', zh: '仅供参考 · 实际表格可能有差异', ja: 'サンプル表示 · 実際と異なる場合があります', vi: 'Hình mẫu · Mẫu thực tế có thể khác' },
+  zoomHint:         { ko: '번호를 탭하면 작성 방법을 볼 수 있어요', en: 'Tap a number to see how to fill in',    zh: '点击编号查看填写方法',  ja: '番号をタップすると記入方法を見られます', vi: 'Nhấn số để xem cách điền'           },
+  zoomHintReset:    { ko: '두 번 탭하면 원래 크기로',               en: 'Double-tap to reset zoom',             zh: '双击恢复原始大小',     ja: 'ダブルタップで元のサイズに',           vi: 'Nhấn đúp để đặt lại thu phóng'      },
+  zoomReset:        { ko: '초기화',                                en: 'Reset',                                zh: '重置',               ja: 'リセット',                            vi: 'Đặt lại'                             },
+  prevItem:         { ko: '이전 항목',                             en: 'Previous',                             zh: '上一项',             ja: '前の項目',                            vi: 'Mục trước'                           },
+  nextItem:         { ko: '다음 항목',                             en: 'Next',                                 zh: '下一项',             ja: '次の項目',                            vi: 'Mục tiếp theo'                       },
+  guideView:        { ko: '작성 안내사항 보기',                    en: 'View Instructions',                    zh: '查看填写说明',        ja: '記入案内を見る',                       vi: 'Xem hướng dẫn điền'                 },
 };
 
 // ── 작성 안내 단계 ──────────────────────────────────────────

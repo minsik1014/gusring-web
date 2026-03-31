@@ -50,7 +50,7 @@ const DetailView: React.FC<Props> = ({ form, t, lang, isDownloading, onDownload,
           <div className="flex items-center gap-2">
             <Info size={15} className="text-amber-600" />
             <span className="text-[13px] font-black text-gusring-text">
-              작성 안내사항 보기 ({guideImgs.length}페이지)
+              {t(UIStrings.guideView)} ({guideImgs.length})
             </span>
           </div>
           {guideOpen ? <ChevronUp size={16} className="text-gusring-text-sub" /> : <ChevronDown size={16} className="text-gusring-text-sub" />}
