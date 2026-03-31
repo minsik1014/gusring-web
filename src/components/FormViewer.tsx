@@ -4,7 +4,7 @@ import React, {
 import { ZoomOut, Info, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { FormItem, I18nString } from '../types';
 import FormMockPreview from './FormMockPreview';
-import { hotspotsByCategory, Hotspot } from '../data/hotspots';
+import { hotspotsByCategory } from '../data/hotspots';
 
 interface Props {
   form: FormItem;
