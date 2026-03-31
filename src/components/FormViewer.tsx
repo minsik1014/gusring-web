@@ -2,13 +2,14 @@ import React, {
   useState, useRef, useCallback, useEffect,
 } from 'react';
 import { ZoomOut, Info, ChevronLeft, ChevronRight, X } from 'lucide-react';
-import { FormItem, I18nString } from '../types';
+import { FormItem, I18nString, LangId } from '../types';
 import FormMockPreview from './FormMockPreview';
 import { hotspotsByCategory } from '../data/hotspots';
 
 interface Props {
   form: FormItem;
   t: (obj: I18nString) => string;
+  lang?: LangId;
 }
 
 // ── 유틸 ──────────────────────────────────────────────────────
@@ -22,7 +23,7 @@ const getTouchDist = (t1: React.Touch, t2: React.Touch) => {
 };
 
 // ── 컴포넌트 ─────────────────────────────────────────────────
-const FormViewer: React.FC<Props> = ({ form, t }) => {
+const FormViewer: React.FC<Props> = ({ form, t, lang }) => {
   const hotspots = hotspotsByCategory[form.cat] ?? [];
 
   // 줌 / 패닝 상태
@@ -140,7 +141,7 @@ const FormViewer: React.FC<Props> = ({ form, t }) => {
             willChange: 'transform',
           }}
         >
-          <FormMockPreview form={form} t={t} />
+          <FormMockPreview form={form} t={t} lang={lang} />
         </div>
 
         {/* ── 핫스팟 뱃지 오버레이 ── */}

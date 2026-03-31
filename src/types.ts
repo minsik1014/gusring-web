@@ -22,6 +22,8 @@ export interface FormItem {
   cat: CategoryKey;
   title: I18nString;
   desc: I18nString;
+  /** 언어별 PNG 경로 (예: /forms/en/1.png). 없으면 목업 UI 표시 */
+  images?: Partial<Record<LangId, string>>;
 }
 
 export interface GuideStep {

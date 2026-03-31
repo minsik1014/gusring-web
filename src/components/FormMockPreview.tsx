@@ -1,5 +1,5 @@
 import React from 'react';
-import { CategoryKey, FormItem, I18nString } from '../types';
+import { CategoryKey, FormItem, I18nString, LangId } from '../types';
 
 // 카테고리별 폼 필드 정의 [레이블, 최소 너비(px)]
 const catFields: Record<CategoryKey, [string, number][]> = {
@@ -13,6 +13,7 @@ const catFields: Record<CategoryKey, [string, number][]> = {
 interface Props {
   form: FormItem;
   t: (obj: I18nString) => string;
+  lang?: LangId;
 }
 
 /**
@@ -20,8 +21,21 @@ interface Props {
  * 실제 PNG 파일 연동 전 임시 목업으로,
  * 나중에 <img src={formPngUrl} /> 로 교체 예정.
  */
-const FormMockPreview: React.FC<Props> = ({ form, t }) => {
+const FormMockPreview: React.FC<Props> = ({ form, t, lang }) => {
+  const imgSrc = lang && form.images?.[lang];
   const fields = catFields[form.cat] ?? catFields.FAMILY;
+
+  // 실제 PNG가 있으면 이미지로 표시
+  if (imgSrc) {
+    return (
+      <img
+        src={imgSrc}
+        alt={t(form.title)}
+        className="w-full block"
+        style={{ display: 'block' }}
+      />
+    );
+  }
 
   return (
     <div className="bg-gusring-surface border border-gusring-border rounded-3xl overflow-hidden shadow-card text-[11px]">
