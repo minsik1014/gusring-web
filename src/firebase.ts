@@ -20,7 +20,7 @@ const firebaseConfig = {
 // ─────────────────────────────────────────────────────────────
 
 export const isFirebaseConfigured =
-  !STUB_MODE && firebaseConfig.apiKey !== 'YOUR_API_KEY';
+  !STUB_MODE && !!firebaseConfig.apiKey && !!firebaseConfig.projectId;
 
 // Firebase가 설치·설정된 경우 실제 모듈 사용
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
