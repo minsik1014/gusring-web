@@ -106,12 +106,12 @@ export const DetailViewBottomBar: React.FC<{
   onDownload: () => void;
   onFeedback: () => void;
 }> = ({ t, lang, isDownloading, onDownload, onFeedback }) => (
-  <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md px-4 pt-3 pb-5 bg-gusring-surface/95 backdrop-blur-md border-t border-gusring-border safe-bottom z-20">
-    <div className="flex gap-3">
+  <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md px-4 pt-3 pb-6 bg-gusring-surface/95 backdrop-blur-md border-t border-gusring-border safe-bottom z-20">
+    <div className="flex gap-2.5">
       <button
         onClick={onDownload}
         disabled={isDownloading}
-        className="flex-1 py-4 btn-primary rounded-3xl font-black text-sm flex items-center justify-center gap-2 active:scale-95 transition-all disabled:opacity-70 disabled:cursor-not-allowed"
+        className="flex-1 py-3.5 btn-primary rounded-2xl font-black text-[13px] flex items-center justify-center gap-1.5 active:scale-95 transition-all disabled:opacity-70 disabled:cursor-not-allowed"
       >
         {isDownloading ? (
           <><span className="inline-block animate-spin">⏳</span> {t(UIStrings.downloading)}</>
@@ -121,7 +121,7 @@ export const DetailViewBottomBar: React.FC<{
       </button>
       <button
         onClick={() => { trackFeedbackClick(lang); onFeedback(); }}
-        className="flex-1 py-4 bg-gusring-text text-white rounded-3xl font-black text-sm flex items-center justify-center gap-2 active:scale-95 transition-all"
+        className="flex-1 py-3.5 bg-gusring-text text-white rounded-2xl font-black text-[13px] flex items-center justify-center gap-1.5 active:scale-95 transition-all"
       >
         <MessageCircle size={17} className="text-gusring-yellow" />
         {t(UIStrings.feedback)}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Globe, ArrowLeft, Menu } from 'lucide-react';
+import { ArrowLeft, Menu } from 'lucide-react';
 import { Language, LangId, ViewName } from '../types';
 
 interface Props {
@@ -28,11 +28,12 @@ const Header: React.FC<Props> = ({ view, currentLang, languages, onBack, onLandi
               <ArrowLeft size={22} />
             </button>
           ) : (
-            <div className="w-9 h-9 bg-gusring-yellow rounded-xl flex items-center justify-center text-amber-900 shadow-yellow-sm border-2 border-white shrink-0">
-              <Globe size={18} />
-            </div>
+            <img
+              src="/gusring_logo.png"
+              alt="Gusring"
+              className="h-9 w-auto object-contain"
+            />
           )}
-          <span className="font-black text-xl text-gusring-text tracking-tight">Gusring</span>
         </div>
 
         {/* 오른쪽: 언어 + 메뉴 */}
