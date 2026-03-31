@@ -106,7 +106,10 @@ export const DetailViewBottomBar: React.FC<{
   onDownload: () => void;
   onFeedback: () => void;
 }> = ({ t, lang, isDownloading, onDownload, onFeedback }) => (
-  <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md px-4 pt-3 pb-6 bg-gusring-surface/95 backdrop-blur-md border-t border-gusring-border safe-bottom z-20">
+  <div
+    className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md px-4 pt-3 bg-gusring-surface/95 backdrop-blur-md border-t border-gusring-border z-20"
+    style={{ paddingBottom: 'calc(env(safe-area-inset-bottom, 0px) + 1.25rem)' }}
+  >
     <div className="flex gap-2.5">
       <button
         onClick={onDownload}

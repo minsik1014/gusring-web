@@ -28,11 +28,13 @@ const Header: React.FC<Props> = ({ view, currentLang, languages, onBack, onLandi
               <ArrowLeft size={22} />
             </button>
           ) : (
-            <img
-              src="/gusring_logo.png"
-              alt="Gusring"
-              className="h-9 w-auto object-contain"
-            />
+            <button onClick={onLanding} className="btn-press" aria-label="홈으로">
+              <img
+                src="/gusring_logo.png"
+                alt="Gusring"
+                className="h-9 w-auto object-contain rounded-xl"
+              />
+            </button>
           )}
         </div>
 

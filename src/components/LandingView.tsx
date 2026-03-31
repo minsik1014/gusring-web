@@ -1,5 +1,5 @@
 import React from 'react';
-import { Globe, ChevronRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { Language, LangId } from '../types';
 import { UIStrings } from '../data/strings';
 
@@ -14,16 +14,12 @@ const LandingView: React.FC<Props> = ({ languages, onSelect }) => (
 
       {/* 로고 */}
       <div className="flex flex-col items-center animate-slide-up" style={{ animationDelay: '0ms' }}>
-        <div className="relative mb-4 sm:mb-5">
-          <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gusring-yellow rounded-[28px] sm:rounded-[32px] flex items-center justify-center text-amber-900 shadow-yellow border-4 border-white rotate-3 btn-press cursor-default">
-            <Globe size={42} className="animate-bounce-soft sm:w-12 sm:h-12" />
-          </div>
-          <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-white rounded-2xl flex items-center justify-center shadow-card border border-gusring-border">
-            <span className="text-base">🇰🇷</span>
-          </div>
-        </div>
-        <h1 className="text-3xl sm:text-4xl font-black text-gusring-text tracking-tight">Gusring</h1>
-        <div className="px-4 py-1.5 bg-gusring-yellow-soft text-amber-800 text-[11px] font-black rounded-full mt-2 uppercase tracking-widest shadow-card border border-amber-100">
+        <img
+          src="/gusring_logo.png"
+          alt="Gusring"
+          className="w-36 sm:w-44 h-auto object-contain rounded-2xl mb-3"
+        />
+        <div className="px-4 py-1.5 bg-gusring-yellow-soft text-amber-800 text-[11px] font-black rounded-full uppercase tracking-widest shadow-card border border-amber-100">
           Geumcheon Smart Ring
         </div>
       </div>
