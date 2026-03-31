@@ -2,7 +2,6 @@ import React, { useState, useMemo, useCallback, useEffect, useRef } from 'react'
 
 import { languages }   from './data/languages';
 import { formsList }   from './data/forms';
-import { UIStrings }   from './data/strings';
 import { useTranslate } from './hooks/useTranslate';
 
 import Header        from './components/Header';
@@ -32,7 +31,6 @@ const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen]             = useState(false);
   const [isDownloading, setIsDownloading]       = useState(false);
   const [isFeedbackOpen, setIsFeedbackOpen]     = useState(false);
-  const downloadTimerRef                        = useRef<ReturnType<typeof setTimeout> | null>(null);
   const detailEnterTimeRef                      = useRef<number | null>(null);
 
   // ── 번역 함수 ───────────────────────────────────────────────
@@ -96,28 +94,38 @@ const App: React.FC = () => {
     if (view === 'detail') window.scrollTo({ top: 0, behavior: 'auto' });
   }, [view, selectedForm]);
 
-  // ── 다운로드 (상태 기반) ────────────────────────────────────
-  const handleDownload = useCallback(() => {
+  // ── 다운로드 ──────────────────────────────────────────────
+  const handleDownload = useCallback(async () => {
     if (isDownloading || !selectedForm) return;
+
+    // ko는 PNG 없으므로 en 폴백
+    const lang = currentLang === 'ko' ? 'en' : currentLang;
+    const imageUrl = selectedForm.images?.[lang] ?? selectedForm.images?.['en'];
+    if (!imageUrl) return;
+
     trackFormDownload({
       formId:    selectedForm.id,
       formTitle: selectedForm.title[currentLang] ?? selectedForm.title.ko,
       category:  selectedForm.cat,
       lang:      currentLang,
     });
-    setIsDownloading(true);
-    downloadTimerRef.current = setTimeout(() => {
-      setIsDownloading(false);
-      alert(`[${t(selectedForm.title)}] ${t(UIStrings.download)} 완료`);
-    }, 1500);
-  }, [isDownloading, selectedForm, currentLang, t]);
 
-  // 언마운트 시 타이머 정리
-  useEffect(() => {
-    return () => {
-      if (downloadTimerRef.current) clearTimeout(downloadTimerRef.current);
-    };
-  }, []);
+    setIsDownloading(true);
+    try {
+      const res  = await fetch(imageUrl);
+      const blob = await res.blob();
+      const url  = URL.createObjectURL(blob);
+      const a    = document.createElement('a');
+      a.href     = url;
+      a.download = `${selectedForm.title[currentLang] ?? selectedForm.title.ko}.png`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } finally {
+      setIsDownloading(false);
+    }
+  }, [isDownloading, selectedForm, currentLang]);
 
   // ── 언어 선택 (Landing → List) ─────────────────────────────
   const handleLangSelect = useCallback((lang: LangId) => {
