@@ -24,6 +24,8 @@ export interface FormItem {
   desc: I18nString;
   /** 언어별 PNG 경로 (예: /forms/en/1.png). 없으면 목업 UI 표시 */
   images?: Partial<Record<LangId, string>>;
+  /** 언어별 안내사항 PNG 경로 배열 (예: ['/forms/en/1_guide1.png', ...]) */
+  guideImages?: Partial<Record<LangId, string[]>>;
 }
 
 export interface GuideStep {
