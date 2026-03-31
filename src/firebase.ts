@@ -2,7 +2,7 @@
 
 
 // ── STEP 1: 개발/테스트에서 stub 모드로 실행하려면 true 설정 ──────────
-const STUB_MODE = process.env.REACT_APP_FIREBASE_STUB_MODE === 'true';
+const STUB_MODE = process.env.REACT_APP_FIREBASE_STUB_MODE === 'false';
 
 // ── STEP 2: 환경 변수(REACT_APP_*)로 Firebase 설정 값 입력 ──────────
 const firebaseConfig = {
