@@ -1,13 +1,194 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ─── Pretendard 웹폰트 (토스 공식 사용 폰트) ───────────────── */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
+
+/* ─── Tailwind 기본 레이어 ──────────────────────────────────── */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── 디자인 토큰 (CSS Custom Properties) ───────────────────── */
+@layer base {
+  :root {
+    --color-bg:            #F5F6FA;
+    --color-surface:       #FFFFFF;
+    --color-yellow:        #FCD34D;
+    --color-yellow-deep:   #F6C90E;
+    --color-yellow-soft:   #FFF9DB;
+    --color-text:          #111827;
+    --color-text-sub:      #6B7280;
+    --color-text-hint:     #9CA3AF;
+    --color-border:        #F0F1F5;
+    --color-border-strong: #E5E7EB;
+
+    --shadow-card:      0 2px 12px rgba(0,0,0,0.06);
+    --shadow-md:        0 4px 20px rgba(0,0,0,0.09);
+    --shadow-lg:        0 8px 32px rgba(0,0,0,0.12);
+    --shadow-yellow:    0 6px 24px rgba(252,211,77,0.45);
+    --shadow-yellow-sm: 0 3px 12px rgba(252,211,77,0.35);
+
+    --ease-toss:   cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-out:    cubic-bezier(0, 0, 0.2, 1);
+
+    --duration-fast:   150ms;
+    --duration-normal: 250ms;
+    --duration-slow:   380ms;
+
+    /* 헤더 높이: py-4(32px) + 아이콘/텍스트(~40px) + safe-area */
+    --header-h: calc(4.5rem + env(safe-area-inset-top, 0px));
+  }
+
+  /* ─── 글로벌 리셋 ───────────────────────────────────────── */
+  *, *::before, *::after {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    font-family:
+      'Pretendard Variable', Pretendard,
+      -apple-system, BlinkMacSystemFont, 'system-ui',
+      'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.025em;
+    line-height: 1.5;
+    overscroll-behavior: contain;
+  }
+
+  /* 데스크탑/태블릿: 앱 외부 배경 */
+  @media (min-width: 640px) {
+    body { background-color: #d1d5db; }
+  }
+
+  /* 스크롤바 숨기기 */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* ─── 컴포넌트 공통 클래스 ──────────────────────────────────── */
+@layer components {
+
+  /* 토스형 카드 */
+  .toss-card {
+    @apply bg-white rounded-4xl;
+    box-shadow: var(--shadow-card);
+    transition:
+      box-shadow var(--duration-fast) var(--ease-toss),
+      transform  var(--duration-fast) var(--ease-toss);
+  }
+  .toss-card:hover  { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+  .toss-card:active { box-shadow: var(--shadow-card); transform: scale(0.985); }
+
+  /* 버튼 누를 때 쑥 들어가는 효과 */
+  .btn-press {
+    transition:
+      transform var(--duration-fast) var(--ease-toss),
+      opacity   var(--duration-fast) var(--ease-toss);
+  }
+  .btn-press:active { transform: scale(0.94); }
+
+  /* 토스형 입력창 */
+  .toss-input {
+    @apply w-full rounded-2xl py-4 px-5
+           text-sm font-semibold
+           placeholder:text-gusring-text-hint
+           outline-none border-2 border-transparent;
+    background-color: var(--color-border);
+    color: var(--color-text);
+    transition:
+      background var(--duration-fast) var(--ease-toss),
+      border-color var(--duration-fast) var(--ease-toss),
+      box-shadow   var(--duration-fast) var(--ease-toss);
+  }
+  .toss-input:focus {
+    background-color: var(--color-surface);
+    border-color: var(--color-yellow);
+    box-shadow: 0 0 0 4px rgba(252,211,77,0.18);
+  }
+
+  /* 토스형 카테고리 칩 */
+  .toss-chip {
+    @apply shrink-0 px-5 py-2 rounded-full text-xs font-bold;
+    color: var(--color-text-sub);
+    background: var(--color-surface);
+    border: 2px solid var(--color-border);
+    transition: all var(--duration-fast) var(--ease-toss);
+  }
+  .toss-chip:hover { border-color: var(--color-border-strong); color: var(--color-text); }
+  .toss-chip.active {
+    background: var(--color-yellow);
+    border-color: var(--color-yellow);
+    color: #78350f;
+    box-shadow: var(--shadow-yellow-sm);
+    transform: scale(1.05);
+  }
+
+  /* 토스형 프라이머리 버튼 */
+  .btn-primary {
+    @apply flex items-center justify-center gap-2
+           font-extrabold rounded-2xl py-4
+           border-b-4 border-amber-400;
+    background: var(--color-yellow);
+    color: #78350f;
+    box-shadow: var(--shadow-yellow);
+    transition: all var(--duration-fast) var(--ease-toss);
+  }
+  .btn-primary:hover { filter: brightness(1.05); }
+  .btn-primary:active {
+    @apply border-b-2 border-amber-500;
+    transform: scale(0.96) translateY(2px);
+    box-shadow: 0 2px 8px rgba(252,211,77,0.3);
+  }
+  .btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+    filter: none;
+  }
+
+  /* 바텀시트 드래그 핸들 */
+  .drag-handle {
+    @apply w-10 h-1 mx-auto rounded-full;
+    background: var(--color-border-strong);
+  }
+}
+
+/* ─── 커스텀 유틸리티 ───────────────────────────────────────── */
+@layer utilities {
+  .ease-toss   { transition-timing-function: var(--ease-toss); }
+  .ease-spring { transition-timing-function: var(--ease-spring); }
+
+  /* 노치/다이나믹 아일랜드 안전 영역 */
+  .safe-bottom { padding-bottom: env(safe-area-inset-bottom, 16px); }
+  .safe-top    { padding-top:    env(safe-area-inset-top, 0px); }
+
+  /* 글래스모피즘 */
+  .glass {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255,255,255,0.88);
+  }
+  .glass-dark {
+    backdrop-filter: blur(20px) saturate(200%);
+    -webkit-backdrop-filter: blur(20px) saturate(200%);
+    background-color: rgba(17,24,39,0.82);
+  }
+
+  /* 스켈레톤 shimmer */
+  .skeleton {
+    background: linear-gradient(90deg, #f0f1f5 25%, #e8e9ef 50%, #f0f1f5 75%);
+    background-size: 200% auto;
+    animation: shimmer 1.6s linear infinite;
+  }
 }

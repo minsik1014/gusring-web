@@ -24,7 +24,21 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>구스링 - 금천구 다국어 민원 가이드</title>
+    <meta name="description" content="금천구 행정 서식을 모국어로 쉽게 이용하세요. Geumcheon-gu multilingual administrative form guide." />
+
+    <!-- ── Google Analytics 4 ── -->
+    <!-- TODO: 'G-XXXXXXXXXX' 자리에 실제 측정 ID를 넣으세요 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ window.dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', {
+        page_title: 'Gusring',
+        send_page_view: false   /* 직접 이벤트로 관리 */
+      });
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

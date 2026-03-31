@@ -1,0 +1,57 @@
+import React from 'react';
+import { Globe, ArrowLeft, Menu } from 'lucide-react';
+import { Language, LangId, ViewName } from '../types';
+
+interface Props {
+  view: ViewName;
+  currentLang: LangId;
+  languages: Language[];
+  onBack: () => void;
+  onLanding: () => void;
+  onMenuOpen: () => void;
+}
+
+const Header: React.FC<Props> = ({ view, currentLang, languages, onBack, onLanding, onMenuOpen }) => {
+  const currentLanguage = languages.find(l => l.id === currentLang);
+
+  return (
+    <header className="sticky top-0 z-30 glass border-b border-gusring-border px-5 py-4 flex items-center justify-between safe-top">
+      {/* 왼쪽: 뒤로가기 or 로고 */}
+      <div className="flex items-center gap-3">
+        {view === 'detail' ? (
+          <button
+            onClick={onBack}
+            className="btn-press p-2 -ml-2 rounded-2xl hover:bg-gusring-yellow-soft text-amber-600 transition-colors"
+            aria-label="뒤로가기"
+          >
+            <ArrowLeft size={22} />
+          </button>
+        ) : (
+          <div className="w-9 h-9 bg-gusring-yellow rounded-xl flex items-center justify-center text-amber-900 shadow-yellow-sm border-2 border-white shrink-0">
+            <Globe size={18} />
+          </div>
+        )}
+        <span className="font-black text-xl text-gusring-text tracking-tight">Gusring</span>
+      </div>
+
+      {/* 오른쪽: 언어 + 메뉴 */}
+      <div className="flex items-center gap-2">
+        <button
+          onClick={onLanding}
+          className="btn-press px-3 py-1.5 bg-gusring-yellow-soft rounded-xl text-[11px] font-black text-amber-800 border border-amber-100 shadow-card active:scale-95 transition-transform"
+        >
+          {currentLanguage?.icon} {currentLang.toUpperCase()}
+        </button>
+        <button
+          onClick={onMenuOpen}
+          className="btn-press p-2 rounded-2xl hover:bg-gusring-bg text-gusring-text-sub transition-colors"
+          aria-label="메뉴 열기"
+        >
+          <Menu size={22} />
+        </button>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
