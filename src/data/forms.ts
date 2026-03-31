@@ -33,7 +33,7 @@ export const formsList: FormItem[] = [
     title: { ko: '인지(친권자 지정)신고서', en: 'Acknowledgment Report', zh: '认知申报书', ja: '認知届', vi: 'Đơn báo cáo nhận con' },
     desc:  { ko: '혼인 외의 자녀를 자신의 자식으로 인정할 때 제출합니다.', en: "Submitted to acknowledge a child born out of wedlock as one's own.", zh: '承认婚姻以外的子女为自己的子女时提交。', ja: '婚姻外の子を自分の子として認める時に提出します。', vi: 'Nộp để công nhận con ngoài giá thú là con của mình.' },
     images: { 'en': '/forms/en/3.png', 'zh': '/forms/zh/3.png', 'ja': '/forms/ja/3.png', 'vi': '/forms/vi/3.png' },
-    guideImages: { 'ja': ['/forms/ja/3_guide1.png', '/forms/ja/3_guide2.png', '/forms/ja/3_guide3.png', '/forms/ja/3_guide4.png', '/forms/ja/3_guide5.png', '/forms/ja/3_guide6.png'] },
+    guideImages: { 'ja': ['/forms/ja/3_guide1.png', '/forms/ja/3_guide2.png', '/forms/ja/3_guide3.png', '/forms/ja/3_guide4.png', '/forms/ja/3_guide5.png', '/forms/ja/3_guide6.png'], 'vi': ['/forms/vi/3_guide1.png', '/forms/vi/3_guide2.png', '/forms/vi/3_guide3.png', '/forms/vi/3_guide4.png', '/forms/vi/3_guide5.png', '/forms/vi/3_guide6.png'] },
   },
   {
     id: 4, cat: 'FAMILY',
@@ -61,14 +61,14 @@ export const formsList: FormItem[] = [
     title: { ko: '성본 변경 신고서', en: 'Surname Change Report', zh: '姓本变更申报书', ja: '姓本変更届', vi: 'Đơn báo cáo thay đổi họ' },
     desc:  { ko: '자녀의 성과 본을 변경하기 위해 작성하는 서류입니다.', en: "Document to change a child's surname and origin.", zh: '为了变更子女的姓和本而填写的材料。', ja: '子の氏と本を変更するために作成する書類です。', vi: 'Văn bản dùng để thay đổi họ và nguồn gốc của con.' },
     images: { 'en': '/forms/en/7.png', 'zh': '/forms/zh/7.png', 'ja': '/forms/ja/7.png', 'vi': '/forms/vi/7.png' },
-    guideImages: { 'zh': ['/forms/zh/7_guide1.png', '/forms/zh/7_guide2.png', '/forms/zh/7_guide3.png'] },
+    guideImages: { 'zh': ['/forms/zh/7_guide1.png', '/forms/zh/7_guide2.png', '/forms/zh/7_guide3.png'], 'vi': ['/forms/vi/7_guide1.png', '/forms/vi/7_guide2.png'] },
   },
   {
     id: 8, cat: 'FAMILY',
     title: { ko: '입양신고서', en: 'Adoption Report', zh: '收养申报书', ja: '養子縁組届', vi: 'Giấy đăng ký nhận con nuôi' },
     desc:  { ko: '법적으로 자녀를 입양하여 부모-자식 관계를 맺을 때 사용합니다.', en: 'Used to legally adopt a child.', zh: '法律上收养子女并建立父母子女关系时使用。', ja: '法的に子を養子にし、親子関係を結ぶ時に使用します。', vi: 'Sử dụng khi nhận con nuôi hợp pháp.' },
     images: { 'en': '/forms/en/8.png', 'zh': '/forms/zh/8.png', 'ja': '/forms/ja/8.png', 'vi': '/forms/vi/8.png' },
-    guideImages: { 'en': ['/forms/en/8_guide1.png', '/forms/en/8_guide2.png', '/forms/en/8_guide3.png', '/forms/en/8_guide4.png', '/forms/en/8_guide5.png', '/forms/en/8_guide6.png', '/forms/en/8_guide7.png', '/forms/en/8_guide8.png', '/forms/en/8_guide9.png'], 'zh': ['/forms/zh/8_guide1.png'], 'ja': ['/forms/ja/8_guide1.png', '/forms/ja/8_guide2.png', '/forms/ja/8_guide3.png', '/forms/ja/8_guide4.png', '/forms/ja/8_guide5.png', '/forms/ja/8_guide6.png'], 'vi': ['/forms/vi/8_guide1.png', '/forms/vi/8_guide2.png'] },
+    guideImages: { 'en': ['/forms/en/8_guide1.png', '/forms/en/8_guide2.png', '/forms/en/8_guide3.png', '/forms/en/8_guide4.png', '/forms/en/8_guide5.png', '/forms/en/8_guide6.png', '/forms/en/8_guide7.png', '/forms/en/8_guide8.png', '/forms/en/8_guide9.png'], 'zh': ['/forms/zh/8_guide1.png'], 'ja': ['/forms/ja/8_guide1.png', '/forms/ja/8_guide2.png', '/forms/ja/8_guide3.png', '/forms/ja/8_guide4.png', '/forms/ja/8_guide5.png', '/forms/ja/8_guide6.png'], 'vi': ['/forms/vi/8_guide1.png', '/forms/vi/8_guide2.png', '/forms/vi/8_guide3.png', '/forms/vi/8_guide4.png', '/forms/vi/8_guide5.png', '/forms/vi/8_guide6.png'] },
   },
   {
     id: 9, cat: 'FAMILY',
@@ -95,7 +95,7 @@ export const formsList: FormItem[] = [
     title: { ko: '이혼신고서', en: 'Divorce Report', zh: '离婚申报书', ja: '離婚届', vi: 'Giấy báo ly hôn' },
     desc:  { ko: '법적 혼인 관계를 해소했음을 신고하는 서류입니다.', en: 'Document reporting the dissolution of a legal marriage.', zh: '申报法律婚姻关系已解除的文件。', ja: '法的婚姻関係を解消したことを届け出る書類です。', vi: 'Văn bản báo cáo việc chấm dứt quan hệ hôn nhân hợp pháp.' },
     images: { 'en': '/forms/en/12.png', 'zh': '/forms/zh/12.png', 'ja': '/forms/ja/12.png', 'vi': '/forms/vi/12.png' },
-    guideImages: { 'en': ['/forms/en/12_guide1.png', '/forms/en/12_guide2.png', '/forms/en/12_guide3.png', '/forms/en/12_guide4.png', '/forms/en/12_guide5.png', '/forms/en/12_guide6.png', '/forms/en/12_guide7.png', '/forms/en/12_guide8.png', '/forms/en/12_guide9.png'], 'zh': ['/forms/zh/12_guide1.png'], 'ja': ['/forms/ja/12_guide1.png', '/forms/ja/12_guide2.png', '/forms/ja/12_guide3.png', '/forms/ja/12_guide4.png', '/forms/ja/12_guide5.png', '/forms/ja/12_guide6.png', '/forms/ja/12_guide7.png', '/forms/ja/12_guide8.png', '/forms/ja/12_guide9.png'] },
+    guideImages: { 'en': ['/forms/en/12_guide1.png', '/forms/en/12_guide2.png', '/forms/en/12_guide3.png', '/forms/en/12_guide4.png', '/forms/en/12_guide5.png', '/forms/en/12_guide6.png', '/forms/en/12_guide7.png', '/forms/en/12_guide8.png', '/forms/en/12_guide9.png'], 'zh': ['/forms/zh/12_guide1.png'], 'ja': ['/forms/ja/12_guide1.png', '/forms/ja/12_guide2.png', '/forms/ja/12_guide3.png', '/forms/ja/12_guide4.png', '/forms/ja/12_guide5.png', '/forms/ja/12_guide6.png', '/forms/ja/12_guide7.png', '/forms/ja/12_guide8.png', '/forms/ja/12_guide9.png'], 'vi': ['/forms/vi/12_guide1.png', '/forms/vi/12_guide2.png', '/forms/vi/12_guide3.png', '/forms/vi/12_guide4.png', '/forms/vi/12_guide5.png', '/forms/vi/12_guide6.png', '/forms/vi/12_guide7.png'] },
   },
   {
     id: 13, cat: 'FAMILY',
@@ -169,7 +169,7 @@ export const formsList: FormItem[] = [
     title: { ko: '국내거소이전신고서', en: 'Residence Change Report', zh: '国内住所转移申报', ja: '国内居所移転届', vi: 'Báo cáo chuyển nơi cư trú' },
     desc:  { ko: '국내 거주지를 옮겼을 때 새로운 주소지를 신고합니다.', en: 'Report a new address when moving within Korea.', zh: '国内居住地搬迁时申报新住所。', ja: '国内の居住地を移した時に新しい住所地を届け出ます。', vi: 'Báo cáo địa chỉ mới khi chuyển nơi cư trú trong nước.' },
     images: { 'en': '/forms/en/21.png', 'zh': '/forms/zh/21.png', 'ja': '/forms/ja/21.png', 'vi': '/forms/vi/21.png' },
-    guideImages: { 'en': ['/forms/en/21_guide1.png'], 'ja': ['/forms/ja/21_guide1.png'], 'vi': ['/forms/vi/21_guide1.png'] },
+    guideImages: { 'en': ['/forms/en/21_guide1.png'], 'ja': ['/forms/ja/21_guide1.png', '/forms/ja/21_guide2.png'], 'vi': ['/forms/vi/21_guide1.png'] },
   },
   {
     id: 27, cat: 'RESIDENCE',
@@ -196,14 +196,14 @@ export const formsList: FormItem[] = [
     title: { ko: '주민등록표 신청서', en: 'Resident Register App', zh: '居民登记表申请', ja: '住民登録票申請', vi: 'Đơn cấp bản sao sổ hộ khẩu' },
     desc:  { ko: '주민등록 등본이나 초본을 발급받기 위해 신청합니다.', en: 'Request to issue a resident register copy.', zh: '领取居民登记誊本或抄本。', ja: '住民登録の謄本や抄本を発行してもらうために申請します。', vi: 'Đăng ký lấy bản sao sổ hộ khẩu.' },
     images: { 'en': '/forms/en/31.png', 'zh': '/forms/zh/31.png', 'ja': '/forms/ja/31.png', 'vi': '/forms/vi/31.png' },
-    guideImages: { 'en': ['/forms/en/31_guide1.png', '/forms/en/31_guide2.png', '/forms/en/31_guide3.png', '/forms/en/31_guide4.png', '/forms/en/31_guide5.png', '/forms/en/31_guide6.png'], 'zh': ['/forms/zh/31_guide1.png'] },
+    guideImages: { 'en': ['/forms/en/31_guide1.png', '/forms/en/31_guide2.png', '/forms/en/31_guide3.png', '/forms/en/31_guide4.png', '/forms/en/31_guide5.png', '/forms/en/31_guide6.png'], 'zh': ['/forms/zh/31_guide1.png'], 'vi': ['/forms/vi/31_guide1.png', '/forms/vi/31_guide2.png', '/forms/vi/31_guide3.png', '/forms/vi/31_guide4.png', '/forms/vi/31_guide5.png', '/forms/vi/31_guide6.png'] },
   },
   {
     id: 32, cat: 'RESIDENCE',
     title: { ko: '주민등록신고서', en: 'Resident Registration', zh: '居民登记申报', ja: '住民登録届', vi: 'Báo cáo đăng ký cư trú' },
     desc:  { ko: '전입, 전출 등 주민등록 사항을 신고할 때 사용합니다.', en: 'Used for resident registration like moving in/out.', zh: '申报迁入、迁出等居民登记事项。', ja: '転入、転出など住民登録事項を届け出る時に使用します。', vi: 'Báo cáo các vấn đề đăng ký cư trú.' },
     images: { 'en': '/forms/en/32.png', 'zh': '/forms/zh/32.png', 'ja': '/forms/ja/32.png', 'vi': '/forms/vi/32.png' },
-    guideImages: { 'en': ['/forms/en/32_guide1.png', '/forms/en/32_guide2.png', '/forms/en/32_guide3.png'], 'ja': ['/forms/ja/32_guide1.png', '/forms/ja/32_guide2.png'] },
+    guideImages: { 'en': ['/forms/en/32_guide1.png', '/forms/en/32_guide2.png', '/forms/en/32_guide3.png'], 'ja': ['/forms/ja/32_guide1.png', '/forms/ja/32_guide2.png'], 'vi': ['/forms/vi/32_guide1.png', '/forms/vi/32_guide2.png'] },
   },
   {
     id: 34, cat: 'RESIDENCE',
@@ -225,7 +225,7 @@ export const formsList: FormItem[] = [
     title: { ko: '인감(변경)신고서(서면)', en: 'Seal Registration', zh: '印章(变更)申报', ja: '印鑑(変更)届', vi: 'Báo cáo thay đổi ấn dấu' },
     desc:  { ko: '새로운 인감을 등록하거나 기존 인감을 변경할 때 사용합니다.', en: 'Used to register or change a personal seal.', zh: '登记新印章或变更现有印章时使用。', ja: '新しい印鑑を登録したり既存の印鑑を変更する時に使用します。', vi: 'Sử dụng khi đăng ký ấn dấu mới.' },
     images: { 'en': '/forms/en/24.png', 'zh': '/forms/zh/24.png', 'ja': '/forms/ja/24.png', 'vi': '/forms/vi/24.png' },
-    guideImages: { 'vi': ['/forms/vi/24_guide1.png', '/forms/vi/24_guide2.png', '/forms/vi/24_guide3.png', '/forms/vi/24_guide4.png', '/forms/vi/24_guide5.png', '/forms/vi/24_guide6.png', '/forms/vi/24_guide7.png'] },
+    guideImages: { 'en': ['/forms/en/24_guide1.png', '/forms/en/24_guide2.png', '/forms/en/24_guide3.png', '/forms/en/24_guide4.png', '/forms/en/24_guide5.png'], 'zh': ['/forms/zh/24_guide1.png'], 'ja': ['/forms/ja/24_guide1.png', '/forms/ja/24_guide2.png', '/forms/ja/24_guide3.png', '/forms/ja/24_guide4.png', '/forms/ja/24_guide5.png'], 'vi': ['/forms/vi/24_guide1.png', '/forms/vi/24_guide2.png', '/forms/vi/24_guide3.png', '/forms/vi/24_guide4.png', '/forms/vi/24_guide5.png', '/forms/vi/24_guide6.png', '/forms/vi/24_guide7.png'] },
   },
   {
     id: 25, cat: 'ID_SEAL',
@@ -251,7 +251,7 @@ export const formsList: FormItem[] = [
     title: { ko: '주민등록증 발급 신청서', en: 'ID Issuance Application', zh: '居民身份证发放申请', ja: '住民登録証発行申請', vi: 'Đơn xin cấp thẻ căn cước' },
     desc:  { ko: '만 17세가 되어 처음 주민등록증을 만들 때 신청합니다.', en: 'Apply for the first ID card at age 17.', zh: '满17岁第一次制作居民身份证时申请。', ja: '満17歳になり、初めて住民登録証を作る時に申請します。', vi: 'Làm thẻ căn cước lần đầu khi đủ 17 tuổi.' },
     images: { 'en': '/forms/en/35.png', 'zh': '/forms/zh/35.png', 'ja': '/forms/ja/35.png', 'vi': '/forms/vi/35.png' },
-    guideImages: { 'en': ['/forms/en/35_guide1.png', '/forms/en/35_guide2.png', '/forms/en/35_guide3.png', '/forms/en/35_guide4.png', '/forms/en/35_guide5.png'], 'zh': ['/forms/zh/35_guide1.png'], 'ja': ['/forms/ja/35_guide1.png'] },
+    guideImages: { 'en': ['/forms/en/35_guide1.png', '/forms/en/35_guide2.png', '/forms/en/35_guide3.png', '/forms/en/35_guide4.png', '/forms/en/35_guide5.png'], 'zh': ['/forms/zh/35_guide1.png'], 'ja': ['/forms/ja/35_guide1.png'], 'vi': ['/forms/vi/35_guide1.png', '/forms/vi/35_guide2.png', '/forms/vi/35_guide3.png', '/forms/vi/35_guide4.png'] },
   },
   {
     id: 36, cat: 'ID_SEAL',
@@ -281,7 +281,7 @@ export const formsList: FormItem[] = [
     title: { ko: '이륜자동차변경신청서', en: 'Motorcycle Change App', zh: '二轮汽车变更申请', ja: '二輪自動車変更申請', vi: 'Thay đổi báo cáo xe máy' },
     desc:  { ko: '오토바이 소유자 정보 등 변경 사항이 있을 때 신청합니다.', en: 'Apply when there are changes in owner info.', zh: '摩托车所有者地址等有变更事项。', ja: 'バイクの所有者の住所など変更がある時に申請します。', vi: 'Thay đổi thông tin báo cáo xe máy.' },
     images: { 'en': '/forms/en/39.png', 'zh': '/forms/zh/39.png', 'ja': '/forms/ja/39.png', 'vi': '/forms/vi/39.png' },
-    guideImages: { 'en': ['/forms/en/39_guide1.png', '/forms/en/39_guide2.png'] },
+    guideImages: { 'en': ['/forms/en/39_guide1.png', '/forms/en/39_guide2.png'], 'vi': ['/forms/vi/39_guide1.png', '/forms/vi/39_guide2.png'] },
   },
   {
     id: 40, cat: 'VEHICLE',
