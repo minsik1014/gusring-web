@@ -10,7 +10,6 @@ import MenuOverlay   from './components/MenuOverlay';
 import LandingView   from './components/LandingView';
 import ListView      from './components/ListView';
 import DetailView    from './components/DetailView';
-import FloatingBanner  from './components/FloatingBanner';
 import FeedbackThread  from './components/FeedbackThread';
 
 import { FormItem, LangId, ViewName } from './types';
@@ -194,7 +193,6 @@ const App: React.FC = () => {
         ) : null}
       </main>
 
-      {view === 'list' && <FloatingBanner t={t} lang={currentLang} />}
     </div>
     </div>
   );
