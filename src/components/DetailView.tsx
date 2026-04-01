@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { ChevronDown, Download, MessageCircle, X, Plus } from 'lucide-react';
+import { ChevronDown, Download, MessageCircle, Plus } from 'lucide-react';
 import { categories } from '../data/categories';
 import { UIStrings } from '../data/strings';
 import { FormItem, I18nString, LangId } from '../types';
@@ -171,55 +171,81 @@ export const DetailViewFAB: React.FC<{
 }> = ({ t, lang, isDownloading, onDownload, onFeedback }) => {
   const [open, setOpen] = useState(false);
 
+  const fabPos: React.CSSProperties = {
+    bottom: 'calc(env(safe-area-inset-bottom, 0px) + 1.5rem)',
+    right:  'max(1.25rem, calc((100vw - 448px) / 2 + 1.25rem))',
+  };
+
+  const subBtn = (delay: number): React.CSSProperties => ({
+    transition: 'opacity 220ms ease, transform 280ms cubic-bezier(0.34,1.4,0.64,1)',
+    transitionDelay: open ? `${delay}ms` : '0ms',
+    opacity:   open ? 1 : 0,
+    transform: open ? 'translateY(0) scale(1)' : 'translateY(16px) scale(0.88)',
+    pointerEvents: open ? 'auto' : 'none',
+  });
+
   return (
-    <div
-      className="fixed z-30 flex flex-col items-end gap-3"
-      style={{
-        bottom: 'calc(env(safe-area-inset-bottom, 0px) + 1.5rem)',
-        right: '1.25rem',
-      }}
-    >
-      {/* 서브 버튼들 (펼쳐질 때) */}
-      <div className={`flex flex-col items-end gap-2.5 transition-all duration-200 ${open ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
-        {/* 피드백 */}
+    <>
+      {/* 딤 배경 */}
+      <div
+        onClick={() => setOpen(false)}
+        className="fixed inset-0 z-20 transition-opacity duration-200"
+        style={{ opacity: open ? 1 : 0, pointerEvents: open ? 'auto' : 'none', background: 'rgba(0,0,0,0.18)' }}
+      />
+
+      <div className="fixed z-30 flex flex-col items-end gap-2.5" style={fabPos}>
+
+        {/* 피드백 버튼 */}
         <button
+          style={subBtn(60)}
           onClick={() => { setOpen(false); trackFeedbackClick(lang); onFeedback(); }}
-          className="flex items-center gap-2.5 btn-press shadow-card-lg active:scale-95 transition-all"
+          className="flex items-center gap-3 pl-4 pr-3 py-3 bg-gusring-text rounded-2xl shadow-card-lg
+                     active:scale-95 active:brightness-110
+                     transition-[transform,filter] duration-150"
         >
-          <span className="bg-gusring-surface text-gusring-text text-[12px] font-black px-3 py-1.5 rounded-2xl shadow-card border border-gusring-border">
+          <span className="text-white text-[13px] font-black tracking-tight whitespace-nowrap">
             {t(UIStrings.feedback)}
           </span>
-          <div className="w-12 h-12 bg-gusring-text rounded-2xl flex items-center justify-center shadow-card-lg">
-            <MessageCircle size={20} className="text-gusring-yellow" />
+          <div className="w-8 h-8 bg-white/10 rounded-xl flex items-center justify-center">
+            <MessageCircle size={16} className="text-gusring-yellow" />
           </div>
         </button>
 
-        {/* 다운로드 */}
+        {/* 다운로드 버튼 */}
         <button
+          style={subBtn(20)}
           onClick={() => { setOpen(false); onDownload(); }}
           disabled={isDownloading}
-          className="flex items-center gap-2.5 btn-press shadow-card-lg active:scale-95 transition-all disabled:opacity-60"
+          className="flex items-center gap-3 pl-4 pr-3 py-3 btn-primary rounded-2xl shadow-yellow
+                     active:scale-95 active:brightness-105
+                     transition-[transform,filter] duration-150 disabled:opacity-60"
         >
-          <span className="bg-gusring-surface text-gusring-text text-[12px] font-black px-3 py-1.5 rounded-2xl shadow-card border border-gusring-border">
+          <span className="text-amber-950 text-[13px] font-black tracking-tight whitespace-nowrap">
             {isDownloading ? t(UIStrings.downloading) : t(UIStrings.download)}
           </span>
-          <div className="w-12 h-12 btn-primary rounded-2xl flex items-center justify-center shadow-yellow">
-            <Download size={20} className="text-amber-950" />
+          <div className="w-8 h-8 bg-amber-900/10 rounded-xl flex items-center justify-center">
+            {isDownloading
+              ? <span className="text-sm animate-spin inline-block">⏳</span>
+              : <Download size={16} className="text-amber-950" />
+            }
           </div>
         </button>
-      </div>
 
-      {/* 메인 FAB */}
-      <button
-        onClick={() => setOpen(o => !o)}
-        className="w-14 h-14 btn-primary rounded-2xl flex items-center justify-center shadow-yellow btn-press active:scale-95 transition-all"
-      >
-        {open
-          ? <X size={22} className="text-amber-950" />
-          : <Plus size={22} className="text-amber-950" />
-        }
-      </button>
-    </div>
+        {/* 메인 FAB */}
+        <button
+          onClick={() => setOpen(o => !o)}
+          className="w-14 h-14 btn-primary rounded-2xl flex items-center justify-center shadow-yellow
+                     active:scale-90 transition-transform duration-150"
+          style={{ transform: open ? 'scale(0.94)' : 'scale(1)' }}
+        >
+          <Plus
+            size={24}
+            className="text-amber-950 transition-transform duration-300"
+            style={{ transform: open ? 'rotate(45deg)' : 'rotate(0deg)' }}
+          />
+        </button>
+      </div>
+    </>
   );
 };
 
