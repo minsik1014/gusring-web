@@ -7,7 +7,7 @@ import { useTranslate } from './hooks/useTranslate';
 import Header        from './components/Header';
 import LandingView   from './components/LandingView';
 import ListView      from './components/ListView';
-import DetailView, { DetailViewBottomBar } from './components/DetailView';
+import DetailView, { DetailViewFAB } from './components/DetailView';
 import FeedbackThread  from './components/FeedbackThread';
 
 import { FormItem, LangId, ViewName } from './types';
@@ -187,9 +187,9 @@ const App: React.FC = () => {
         ) : null}
       </main>
 
-      {/* 상세 화면 하단 고정 버튼 바 */}
+      {/* 상세 화면 FAB */}
       {view === 'detail' && selectedForm && (
-        <DetailViewBottomBar
+        <DetailViewFAB
           t={t}
           lang={currentLang}
           isDownloading={isDownloading}
