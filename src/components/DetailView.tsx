@@ -153,6 +153,40 @@ const DetailView: React.FC<Props> = ({ form, t, lang }) => {
           )}
         </AccordionSection>
 
+        {/* 3. 행정 정보 (수수료, 준비물 등) */}
+        {(form.fee || form.requirements || form.notes) && (
+          <AccordionSection index={3} label={t({ ko: '행정 정보 안내', en: 'Administrative Info', zh: '行政信息', ja: '行政情報', vi: 'Thông tin hành chính' })}>
+            <div className="space-y-4 py-2">
+              {form.fee && (
+                <div>
+                  <h4 className="text-[13px] font-bold text-gusring-text mb-1 flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-gusring-yellow rounded-full"></span>
+                    {t({ ko: '수수료', en: 'Fee', zh: '费用', ja: '手数料', vi: 'Lệ phí' })}
+                  </h4>
+                  <p className="text-[13px] text-gusring-text-sub ml-3.5">{t(form.fee as I18nString)}</p>
+                </div>
+              )}
+              {form.requirements && (
+                <div>
+                  <h4 className="text-[13px] font-bold text-gusring-text mb-1 flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-gusring-yellow rounded-full"></span>
+                    {t({ ko: '준비물', en: 'Requirements', zh: '准备물', ja: '準備物', vi: 'Yêu cầu' })}
+                  </h4>
+                  <p className="text-[13px] text-gusring-text-sub ml-3.5">{t(form.requirements as I18nString)}</p>
+                </div>
+              )}
+              {form.notes && (
+                <div className="bg-gusring-bg/50 p-3 rounded-2xl border border-gusring-border">
+                  <h4 className="text-[12px] font-bold text-gusring-text-sub mb-1 flex items-center gap-1.5">
+                    💡 {t({ ko: '참고사항', en: 'Notes', zh: '注意事项', ja: '注意事項', vi: 'Lưu ý' })}
+                  </h4>
+                  <p className="text-[12px] text-gusring-text-hint leading-relaxed">{t(form.notes as I18nString)}</p>
+                </div>
+              )}
+            </div>
+          </AccordionSection>
+        )}
+
       </div>
     </div>
   );
