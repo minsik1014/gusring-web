@@ -26,6 +26,11 @@ export interface FormItem {
   images?: Partial<Record<LangId, string>>;
   /** 언어별 안내사항 PNG 경로 배열 (예: ['/forms/en/1_guide1.png', ...]) */
   guideImages?: Partial<Record<LangId, string[]>>;
+
+  /** 추가 행정 정보 */
+  fee?: Partial<I18nString>;
+  requirements?: Partial<I18nString>;
+  notes?: Partial<I18nString>;
 }
 
 export interface GuideStep {
