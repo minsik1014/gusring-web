@@ -1,50 +1,78 @@
-# Create React App 시작하기
+# Gusring — 금천구 다국어 민원 가이드
 
-이 프로젝트는 [Create React App](https://github.com/facebook/create-react-app)으로 부트스트랩되었습니다.
+금천구 외국인 주민을 위한 행정 서식 안내 웹앱입니다.  
+41종의 민원 서류를 5개 언어로 제공하며, 서식 미리보기 및 PDF 다운로드를 지원합니다.
 
-## 사용 가능한 스크립트
+<br/>
 
-프로젝트 디렉터리에서 다음 명령을 실행할 수 있습니다.
+## 주요 기능
 
-### `npm start`
+- **5개 언어 지원** — 한국어, English, 中文, 日本語, Tiếng Việt
+- **41종 행정 서식** — 가족관계 · 증명서 · 체류/주거 · 신분/인감 · 차량/이륜차
+- **서식 미리보기** — 핀치 줌 / 더블탭 확대 지원
+- **PDF 다운로드** — 서식 파일 직접 저장
+- **피드백 수집** — Google Form 연동
+- **모바일 최적화** — Safe Area, 바텀시트 등 네이티브 UX
 
-개발 모드로 앱을 실행합니다.\
-브라우저에서 [http://localhost:3000](http://localhost:3000)을 열어 확인하세요.
+<br/>
 
-코드를 수정하면 페이지가 자동으로 다시 로드됩니다.\
-콘솔에서 Lint 오류도 표시됩니다.
+## 기술 스택
 
-### `npm test`
+| 분류 | 사용 기술 |
+|---|---|
+| Frontend | React 19, TypeScript |
+| Styling | Tailwind CSS, Pretendard |
+| Icons | Lucide React |
+| Deploy | Netlify |
 
-인터랙티브 워치 모드에서 테스트 러너를 실행합니다.\
-자세한 내용은 [테스트 실행](https://facebook.github.io/create-react-app/docs/running-tests) 문서를 참고하세요.
+<br/>
 
-### `npm run build`
+## 시작하기
 
-프로덕션 용도로 앱을 `build` 폴더에 빌드합니다.\
-React를 프로덕션 모드로 번들하고 빌드를 최적화합니다.
+```bash
+# 의존성 설치
+npm install
 
-빌드는 압축되고 파일 이름에 해시가 포함됩니다.\
-이제 앱을 배포할 준비가 되었습니다!
+# 개발 서버 실행 (http://localhost:3000)
+npm start
 
-배포에 대한 자세한 내용은 [배포](https://facebook.github.io/create-react-app/docs/deployment) 문서를 참고하세요.
+# 프로덕션 빌드
+npm run build
+```
 
-### `npm run eject`
+<br/>
 
-**주의: 이 작업은 되돌릴 수 없습니다. `eject`를 실행하면 돌아올 수 없습니다!**
+## 프로젝트 구조
 
-빌드 도구 및 설정이 만족스럽지 않은 경우 언제든지 `eject` 할 수 있습니다. 이 명령은 프로젝트에서 단일 빌드 종속성을 제거합니다.
+```
+src/
+├── components/       # UI 컴포넌트
+│   ├── LandingView   # 언어 선택 페이지
+│   ├── ListView      # 서식 목록
+│   ├── DetailView    # 서식 상세 + FAB
+│   ├── FormViewer    # 서식 미리보기 (줌 지원)
+│   └── FeedbackThread# 피드백 (Google Form 연동)
+├── data/             # 서식 데이터, 카테고리, 언어 정의
+├── hooks/            # useTranslate 등 커스텀 훅
+└── types.ts          # 공통 타입 정의
+```
 
-대신 모든 설정 파일과 종속 도구(webpack, Babel, ESLint 등)를 프로젝트에 복사하여 완전히 제어할 수 있도록 합니다. `eject`를 제외한 다른 명령은 계속 작동하지만, 복사된 스크립트를 참조하므로 직접 수정할 수 있습니다.
+<br/>
 
-`eject`를 반드시 사용할 필요는 없습니다. 기본 기능 세트는 소규모 및 중간 규모 배포에 적합하며, 필요할 때까지 꼭 사용하지 않아도 됩니다.
+## 배포
 
-## 더 알아보기
+Netlify를 통해 자동 배포됩니다. `main` 브랜치에 푸시하면 빌드가 트리거됩니다.
 
-[Create React App 문서](https://facebook.github.io/create-react-app/docs/getting-started)에서 더 많은 정보를 확인할 수 있습니다.
+```toml
+# netlify.toml
+[build]
+  command = "npm run build"
+  publish = "build"
+```
 
-React를 배우려면 [React 문서](https://reactjs.org/)를 참고하세요.
+<br/>
 
-## 완료 상태
+## 팀
 
-- ✅ 오케
+**Team EL** · 금천구 리빙랩 프로젝트  
+© 2026 Geumcheon-gu Living Lab
