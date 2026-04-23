@@ -5,6 +5,7 @@ import { UIStrings } from '../data/strings';
 import { FormItem, I18nString, LangId } from '../types';
 import FormViewer from './FormViewer';
 import ImageLightbox from './ImageLightbox';
+import OfficeMap from './OfficeMap';
 import { trackFeedbackClick } from '../analytics';
 
 interface Props {
@@ -177,7 +178,11 @@ const DetailView: React.FC<Props> = ({ form, t, lang }) => {
         {/* 3. 행정 정보 (수수료, 준비물 등) */}
         {(form.fee || form.requirements || form.notes) && (
           <AccordionSection index={3} label={t({ ko: '행정 정보 안내', en: 'Administrative Info', zh: '行政信息', ja: '行政情報', vi: 'Thông tin hành chính' })}>
-            <div className="space-y-4 py-2">
+
+            {/* 창구 안내 지도 */}
+            <OfficeMap lang={lang} />
+
+            <div className="space-y-4 py-2 mt-4">
               {form.fee && (
                 <div>
                   <h4 className="text-[13px] font-bold text-gusring-text mb-1 flex items-center gap-2">
