@@ -27,18 +27,22 @@ const LandingView: React.FC<Props> = ({ languages, onSelect }) => {
 
       {/* ── 상단: 로고 ─────────────────────────────────────── */}
       <div className="flex flex-col items-center justify-center flex-1 px-8 pt-10 pb-4 w-full">
-        {/* 로고 + 마스코트 */}
-        <div className="flex items-end justify-center gap-1 animate-scale-in" style={{ animationDelay: '0ms' }}>
+        {/* 로고 */}
+        <div className="animate-scale-in" style={{ animationDelay: '0ms' }}>
           <img
             src="/gusring_logo.png"
             alt="Gusring"
             className="w-44 sm:w-52 h-auto object-contain"
             style={{ mixBlendMode: 'multiply' }}
           />
+        </div>
+
+        {/* 마스코트 */}
+        <div className="animate-scale-in" style={{ animationDelay: '80ms' }}>
           <img
             src="/waving.png"
             alt="mascot"
-            className="w-24 sm:w-28 h-auto object-contain animate-bounce-soft"
+            className="w-28 sm:w-32 h-auto object-contain animate-bounce-soft"
           />
         </div>
 

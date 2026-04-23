@@ -9,7 +9,7 @@
 /* ─── 디자인 토큰 (CSS Custom Properties) ───────────────────── */
 @layer base {
   :root {
-    --color-bg:            #FAF8F5;
+    --color-bg:            #FFFFFF;
     --color-surface:       #FFFFFF;
     --color-yellow:        #fedb02;
     --color-yellow-deep:   #e5c400;

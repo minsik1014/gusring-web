@@ -16,7 +16,7 @@ module.exports = {
       // ── 색상 토큰 ─────────────────────────────────────────
       colors: {
         gusring: {
-          bg:        '#FAF8F5',
+          bg:        '#FFFFFF',
           surface:   '#FFFFFF',
           // 브랜드 메인 컬러
           yellow:         '#fedb02',

@@ -160,9 +160,17 @@ const DetailView: React.FC<Props> = ({ form, t, lang }) => {
           {guideImages.length > 0 ? (
             <ImageCarousel images={guideImages} />
           ) : (
-            <p className="text-center text-[13px] text-gusring-text-hint py-6">
-              {t(UIStrings.noGuide)}
-            </p>
+            <div className="flex flex-col items-center justify-center gap-3 py-10 px-6 text-center bg-gusring-bg rounded-2xl">
+              <img src="/sign.png" alt="preparing" className="w-28 h-auto object-contain" />
+              <div className="space-y-1">
+                <p className="font-black text-gusring-text text-[15px]">
+                  {t({ ko: '이미지 준비중', en: 'Image coming soon', zh: '图片准备中', ja: '画像準備中', vi: 'Đang chuẩn bị ảnh' })}
+                </p>
+                <p className="text-[12px] text-gusring-text-hint leading-relaxed">
+                  {t({ ko: '안내 이미지를 준비하고 있어요.', en: "We're preparing the guide images.", zh: '我们正在准备说明图片。', ja: '案内画像を準備しています。', vi: 'Chúng tôi đang chuẩn bị hình ảnh hướng dẫn.' })}
+                </p>
+              </div>
+            </div>
           )}
         </AccordionSection>
 
