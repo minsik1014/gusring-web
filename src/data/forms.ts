@@ -53,7 +53,7 @@ export const formsList: FormItem[] = [
     id: 3, cat: 'FAMILY',
     title: { ko: '인지(친권자 지정)신고서', en: 'Acknowledgment Report', zh: '认知申报书', ja: '認知届', vi: 'Đơn báo cáo nhận con' },
     desc:  { ko: '혼인 외의 자녀를 자신의 자식으로 인정할 때 제출합니다.', en: "Submitted to acknowledge a child born out of wedlock as one's own.", zh: '承认婚姻以外的子女为自己的子女时提交。', ja: '婚姻外の子を自分の子として認める時に提出します.', vi: 'Nộp để công nhận con ngoài giá thú là con của mình.' },
-    images: { 'zh': '/forms/zh/3.png', 'vi': '/forms/vi/3.png' },
+    images: { 'vi': '/forms/vi/3.png' },
     guideImages: { 'ja': ['/forms/ja/3_guide1.png', '/forms/ja/3_guide2.png', '/forms/ja/3_guide3.png', '/forms/ja/3_guide4.png', '/forms/ja/3_guide5.png', '/forms/ja/3_guide6.png'], 'vi': ['/forms/vi/3_guide1.png', '/forms/vi/3_guide2.png', '/forms/vi/3_guide3.png', '/forms/vi/3_guide4.png', '/forms/vi/3_guide5.png', '/forms/vi/3_guide6.png'] },
     fee: { ko: '무료', en: 'Free', zh: '免费', ja: '無料', vi: 'Miễn phí' },
     requirements: { 
@@ -127,7 +127,7 @@ export const formsList: FormItem[] = [
     id: 7, cat: 'FAMILY',
     title: { ko: '성본 변경 신고서', en: 'Surname Change Report', zh: '姓本变更申报书', ja: '姓本変更届', vi: 'Đơn báo cáo thay đổi họ' },
     desc:  { ko: '자녀의 성과 본을 변경하기 위해 작성하는 서류입니다.', en: "Document to change a child's surname and origin.", zh: '为了变更子女的姓和本而填写的材料。', ja: '子の氏と本を変更するために作成する書類です.', vi: 'Văn bản dùng để thay đổi họ và nguồn gốc của con.' },
-    images: { 'ja': '/forms/ja/7.png', 'vi': '/forms/vi/7.png' },
+    images: { 'vi': '/forms/vi/7.png' },
     guideImages: { 'zh': ['/forms/zh/7_guide1.png', '/forms/zh/7_guide2.png', '/forms/zh/7_guide3.png'], 'vi': ['/forms/vi/7_guide1.png', '/forms/vi/7_guide2.png'] },
     fee: { ko: '무료', en: 'Free', zh: '免费', ja: '無料', vi: 'Miễn phí' },
     requirements: { 
@@ -443,7 +443,7 @@ export const formsList: FormItem[] = [
     id: 31, cat: 'RESIDENCE',
     title: { ko: '주민등록표 신청서', en: 'Resident Register App', zh: '居民登记表申请', ja: '住民登録票申請', vi: 'Đơn cấp bản sao sổ hộ khẩu' },
     desc:  { ko: '주민등록 등본이나 초본을 발급받기 위해 신청합니다.', en: 'Request to issue a resident register copy.', zh: '领取居民登记誊本或抄本. ', ja: '住民登録の謄本や抄本を発行してもらうために申請します.', vi: 'Đăng ký lấy bản sao sổ hộ khẩu.' },
-    images: { 'en': '/forms/en/31.png', 'ja': '/forms/ja/31.png', 'vi': '/forms/vi/31.png' },
+    images: { 'en': '/forms/en/31.png', 'vi': '/forms/vi/31.png' },
     guideImages: { 'en': ['/forms/en/31_guide1.png', '/forms/en/31_guide2.png', '/forms/en/31_guide3.png', '/forms/en/31_guide4.png', '/forms/en/31_guide5.png', '/forms/en/31_guide6.png'], 'zh': ['/forms/zh/31_guide1.png'], 'vi': ['/forms/vi/31_guide1.png', '/forms/vi/31_guide2.png', '/forms/vi/31_guide3.png', '/forms/vi/31_guide4.png', '/forms/vi/31_guide5.png', '/forms/vi/31_guide6.png'] },
     fee: { ko: '400원', en: '400 KRW', zh: '400 韩元', ja: '400ウォン', vi: '400 KRW' },
     requirements: { 
@@ -465,7 +465,7 @@ export const formsList: FormItem[] = [
     id: 32, cat: 'RESIDENCE',
     title: { ko: '주민등록신고서', en: 'Resident Registration', zh: '居民登记申报', ja: '住民登録届', vi: 'Báo cáo đăng ký cư trú' },
     desc:  { ko: '전입, 전출 등 주민등록 사항을 신고할 때 사용합니다.', en: 'Used for resident registration like moving in/out.', zh: '申报迁入、迁出等居民登记事项. ', ja: '転入, 転出など住民登録事項を届け出る時に使用します.', vi: 'Báo cáo các vấn đề đăng ký cư trú.' },
-    images: { 'en': '/forms/en/32.png', 'zh': '/forms/zh/32.png', 'ja': '/forms/ja/32.png', 'vi': '/forms/vi/32.png' },
+    images: { 'en': '/forms/en/32.png', 'zh': '/forms/zh/32.png', 'vi': '/forms/vi/32.png' },
     guideImages: { 'en': ['/forms/en/32_guide1.png', '/forms/en/32_guide2.png', '/forms/en/32_guide3.png'], 'ja': ['/forms/ja/32_guide1.png', '/forms/ja/32_guide2.png'], 'vi': ['/forms/vi/32_guide1.png', '/forms/vi/32_guide2.png'] },
     fee: { ko: '무료', en: 'Free', zh: '免费', ja: '無料', vi: 'Miễn phí' },
     requirements: { 
@@ -480,7 +480,7 @@ export const formsList: FormItem[] = [
     id: 34, cat: 'RESIDENCE',
     title: { ko: '주민등록표 발급 위임장', en: 'POA for Resident Register', zh: '居民登记表委托', ja: '住民登録票委任状', vi: 'Ủy quyền cấp sổ hộ khẩu' },
     desc:  { ko: '주민등록 등·초본 발급을 대리인에게 위임할 때 작성합니다.', en: 'To delegate resident register issuance.', zh: '将居民登记誊·抄본发放委托给代理人. ', ja: '住民登録謄・抄本の発行を代理人に委任する時に作成します.', vi: 'Ủy quyền lấy bản sao sổ hộ khẩu.' },
-    images: { 'en': '/forms/en/34.png', 'zh': '/forms/zh/34.png', 'ja': '/forms/ja/34.png', 'vi': '/forms/vi/34.png' },
+    images: { 'en': '/forms/en/34.png', 'zh': '/forms/zh/34.png', 'vi': '/forms/vi/34.png' },
     guideImages: { 'en': ['/forms/en/34_guide1.png', '/forms/en/34_guide2.png', '/forms/en/34_guide3.png', '/forms/en/34_guide4.png', '/forms/en/34_guide5.png', '/forms/en/34_guide6.png'], 'zh': ['/forms/zh/34_guide1.png'], 'ja': ['/forms/ja/34_guide1.png', '/forms/ja/34_guide2.png', '/forms/ja/34_guide3.png', '/forms/ja/34_guide4.png', '/forms/ja/34_guide5.png', '/forms/ja/34_guide6.png'], 'vi': ['/forms/vi/34_guide1.png', '/forms/vi/34_guide2.png', '/forms/vi/34_guide3.png', '/forms/vi/34_guide4.png', '/forms/vi/34_guide5.png'] },
     fee: { ko: '400원', en: '400 KRW', zh: '400 韩元', ja: '400ウォン', vi: '400 KRW' },
     requirements: { 
