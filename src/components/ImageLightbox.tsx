@@ -92,7 +92,7 @@ const ImageLightbox: React.FC<Props> = ({ images, initialIndex, onClose }) => {
         <img
           key={current}
           src={images[current]}
-          alt={`image ${current + 1}`}
+          alt={`view ${current + 1}`}
           className="max-w-full max-h-full object-contain animate-scale-in"
           style={{ animationDuration: '150ms' }}
           draggable={false}
