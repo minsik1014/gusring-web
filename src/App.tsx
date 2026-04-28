@@ -126,7 +126,7 @@ const App: React.FC = () => {
     } finally {
       setIsDownloading(false);
     }
-  }, [isDownloading, selectedForm, currentLang]);
+  }, [isDownloading, selectedForm, currentLang, resolveImageUrl]);
 
   // ── 언어 선택 (Landing → List) ─────────────────────────────
   const handleLangSelect = useCallback((lang: LangId) => {
